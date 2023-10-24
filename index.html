@@ -46,6 +46,7 @@
       document.querySelector('.city').innerHTML = data.name;
       document.querySelector('.humid').innerHTML = Math.round(data.main.humidity) + " %";
       document.querySelector('.speed').innerHTML = Math.round(data.wind.speed) + " km/h";
+      const input = document.querySelector('.text');
       
       if (data.weather[0].main == 'Clouds') image.src = "./images/clouds.png"
       else if (data.weather[0].main == 'Clear') image.src = "./images/clear.png"
@@ -56,7 +57,8 @@
     
     }
     btn.addEventListener('click', () => {
-      getWeather(input.value)
+      getWeather(input.value);
+      input.value = "";
     })
   </script>
 </body>
